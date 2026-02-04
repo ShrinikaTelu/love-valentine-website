@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Our Plan 💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page2">
+    <div class="hearts-background"></div>
+    <div class="container">
+        <h1 class="page2-title">Yay! Choose our plan 💖</h1>
+        <p class="subtitle">Select multiple activities to create the perfect date!</p>
+        
+        <div class="selection-info" id="selectionInfo">
+            <span id="selectedCount">0</span> activities selected
+            <button class="btn btn-create-itinerary" id="createItineraryBtn" onclick="createCombinedItinerary()" disabled>
+                ✨ Create Itinerary
+            </button>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card" data-plan="Movie">
+                <div class="card-checkbox"><input type="checkbox" id="check-movie" onchange="togglePlan('Movie')"><label for="check-movie"></label></div>
+                <div class="card-icon">🎬</div>
+                <h2 class="card-title">Movie</h2>
+                <p class="card-description">Cozy up together and watch the latest romantic blockbuster with popcorn and snuggles.</p>
+                <button class="btn btn-select" onclick="togglePlan('Movie')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Candle Light Dinner">
+                <div class="card-checkbox"><input type="checkbox" id="check-dinner" onchange="togglePlan('Candle Light Dinner')"><label for="check-dinner"></label></div>
+                <div class="card-icon">🕯️</div>
+                <h2 class="card-title">Candle Light Dinner</h2>
+                <p class="card-description">Enjoy a romantic dinner with dim lights, soft music, and delicious cuisine.</p>
+                <button class="btn btn-select" onclick="togglePlan('Candle Light Dinner')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Temple">
+                <div class="card-checkbox"><input type="checkbox" id="check-temple" onchange="togglePlan('Temple')"><label for="check-temple"></label></div>
+                <div class="card-icon">🙏</div>
+                <h2 class="card-title">Temple</h2>
+                <p class="card-description">Start our journey with blessings and peaceful moments together at a sacred place.</p>
+                <button class="btn btn-select" onclick="togglePlan('Temple')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Game Zone">
+                <div class="card-checkbox"><input type="checkbox" id="check-game" onchange="togglePlan('Game Zone')"><label for="check-game"></label></div>
+                <div class="card-icon">🎮</div>
+                <h2 class="card-title">Game Zone</h2>
+                <p class="card-description">Challenge each other to fun games and create exciting memories together!</p>
+                <button class="btn btn-select" onclick="togglePlan('Game Zone')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Beach Walk">
+                <div class="card-checkbox"><input type="checkbox" id="check-beach" onchange="togglePlan('Beach Walk')"><label for="check-beach"></label></div>
+                <div class="card-icon">🏖️</div>
+                <h2 class="card-title">Beach Walk</h2>
+                <p class="card-description">Walk hand in hand along the shore, feel the waves, and watch the sunset together.</p>
+                <button class="btn btn-select" onclick="togglePlan('Beach Walk')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Amusement Park">
+                <div class="card-checkbox"><input type="checkbox" id="check-amusement" onchange="togglePlan('Amusement Park')"><label for="check-amusement"></label></div>
+                <div class="card-icon">🎡</div>
+                <h2 class="card-title">Amusement Park</h2>
+                <p class="card-description">Scream on roller coasters, win prizes, and share cotton candy like kids again!</p>
+                <button class="btn btn-select" onclick="togglePlan('Amusement Park')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Café Hopping">
+                <div class="card-checkbox"><input type="checkbox" id="check-cafe" onchange="togglePlan('Café Hopping')"><label for="check-cafe"></label></div>
+                <div class="card-icon">☕</div>
+                <h2 class="card-title">Café Hopping</h2>
+                <p class="card-description">Explore cozy cafés, try different coffees, and have deep conversations over pastries.</p>
+                <button class="btn btn-select" onclick="togglePlan('Café Hopping')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Stargazing">
+                <div class="card-checkbox"><input type="checkbox" id="check-stars" onchange="togglePlan('Stargazing')"><label for="check-stars"></label></div>
+                <div class="card-icon">🌟</div>
+                <h2 class="card-title">Stargazing</h2>
+                <p class="card-description">Lay under the night sky, spot constellations, and make wishes on shooting stars.</p>
+                <button class="btn btn-select" onclick="togglePlan('Stargazing')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Art Class">
+                <div class="card-checkbox"><input type="checkbox" id="check-art" onchange="togglePlan('Art Class')"><label for="check-art"></label></div>
+                <div class="card-icon">🎨</div>
+                <h2 class="card-title">Art Class</h2>
+                <p class="card-description">Paint, sculpt, or create something beautiful together in a fun art workshop.</p>
+                <button class="btn btn-select" onclick="togglePlan('Art Class')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Boating">
+                <div class="card-checkbox"><input type="checkbox" id="check-boat" onchange="togglePlan('Boating')"><label for="check-boat"></label></div>
+                <div class="card-icon">🛶</div>
+                <h2 class="card-title">Boating</h2>
+                <p class="card-description">Paddle through calm waters, enjoy the breeze, and steal romantic moments on a boat.</p>
+                <button class="btn btn-select" onclick="togglePlan('Boating')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Cook Together">
+                <div class="card-checkbox"><input type="checkbox" id="check-cook" onchange="togglePlan('Cook Together')"><label for="check-cook"></label></div>
+                <div class="card-icon">🍳</div>
+                <h2 class="card-title">Cook Together</h2>
+                <p class="card-description">Make a delicious meal together at home - messy kitchen, tasty food, and lots of fun!</p>
+                <button class="btn btn-select" onclick="togglePlan('Cook Together')">Select</button>
+            </div>
+            
+            <div class="card" data-plan="Karaoke Night">
+                <div class="card-checkbox"><input type="checkbox" id="check-karaoke" onchange="togglePlan('Karaoke Night')"><label for="check-karaoke"></label></div>
+                <div class="card-icon">🎤</div>
+                <h2 class="card-title">Karaoke Night</h2>
+                <p class="card-description">Sing your hearts out to your favorite songs, no matter how off-key!</p>
+                <button class="btn btn-select" onclick="togglePlan('Karaoke Night')">Select</button>
+            </div>
+        </div>
+        
+        <div id="selectedMessage" class="selected-message"></div>
+        
+        <!-- Itinerary Modal -->
+        <div id="itineraryModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <div id="itineraryContent"></div>
+                <div class="modal-buttons">
+                    <button class="btn btn-download" onclick="downloadItinerary()">📥 Download PDF</button>
+                    <button class="btn btn-email" onclick="sendEmail()">📧 Send to Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
