@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const noBtn = document.getElementById('noBtn');
     
     if (yesBtn && noBtn) {
-        // YES button click - navigate to page 2
+        // YES button click - navigate to greeting cards page
         yesBtn.addEventListener('click', function() {
             // Add a little celebration effect before navigating
             this.textContent = '💖 YAY! 💖';
             this.style.transform = 'scale(1.2)';
             
             setTimeout(() => {
-                window.location.href = 'page2.html';
+                window.location.href = 'greeting-cards.html';
             }, 500);
         });
         
@@ -335,3 +335,80 @@ document.head.appendChild(style);
 
 // Create floating hearts periodically
 setInterval(createFloatingHeart, 800);
+
+// ========== GREETING CARDS CAROUSEL ==========
+let currentCardIndex = 0;
+const greetingCards = document.querySelectorAll('.greeting-card');
+const dots = document.querySelectorAll('.dot');
+
+function updateCarousel() {
+    greetingCards.forEach((card, index) => {
+        card.classList.remove('active', 'prev', 'next');
+        if (index === currentCardIndex) {
+            card.classList.add('active');
+        } else if (index < currentCardIndex) {
+            card.classList.add('prev');
+        } else {
+            card.classList.add('next');
+        }
+    });
+    
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentCardIndex);
+    });
+}
+
+function nextCard() {
+    if (greetingCards.length === 0) return;
+    currentCardIndex = (currentCardIndex + 1) % greetingCards.length;
+    updateCarousel();
+}
+
+function prevCard() {
+    if (greetingCards.length === 0) return;
+    currentCardIndex = (currentCardIndex - 1 + greetingCards.length) % greetingCards.length;
+    updateCarousel();
+}
+
+function goToCard(index) {
+    if (greetingCards.length === 0) return;
+    currentCardIndex = index;
+    updateCarousel();
+}
+
+// Touch swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carouselContainer = document.querySelector('.greeting-cards-container');
+if (carouselContainer) {
+    carouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            nextCard();
+        } else {
+            prevCard();
+        }
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (greetingCards.length === 0) return;
+    if (e.key === 'ArrowRight') nextCard();
+    if (e.key === 'ArrowLeft') prevCard();
+});
+

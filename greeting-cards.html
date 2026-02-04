@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week Cards 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="greeting-page">
+    <div class="hearts-background"></div>
+    <div class="container">
+        <h1 class="greeting-title">Happy Valentine's Week, Satwik! 💕</h1>
+        <p class="greeting-subtitle">Swipe through each special day just for you!</p>
+        
+        <div class="cards-carousel">
+            <button class="carousel-btn prev-btn" onclick="prevCard()">❮</button>
+            
+            <div class="greeting-cards-container">
+                <!-- Rose Day - Feb 7 -->
+                <div class="greeting-card active" data-day="rose">
+                    <div class="card-date">February 7th</div>
+                    <div class="card-emoji">🌹</div>
+                    <h2 class="card-day-title">Rose Day</h2>
+                    <p class="card-message">Like a rose, my love for you blooms more beautiful each day. You're the most precious flower in my garden of life! 🌹💕</p>
+                    <div class="card-decoration">🌹🌹🌹</div>
+                </div>
+
+                <!-- Propose Day - Feb 8 -->
+                <div class="greeting-card" data-day="propose">
+                    <div class="card-date">February 8th</div>
+                    <div class="card-emoji">💍</div>
+                    <h2 class="card-day-title">Propose Day</h2>
+                    <p class="card-message">Every moment with you feels like a dream. Will you be mine forever? You make my heart skip a beat! 💍✨</p>
+                    <div class="card-decoration">💕💍💕</div>
+                </div>
+
+                <!-- Chocolate Day - Feb 9 -->
+                <div class="greeting-card" data-day="chocolate">
+                    <div class="card-date">February 9th</div>
+                    <div class="card-emoji">🍫</div>
+                    <h2 class="card-day-title">Chocolate Day</h2>
+                    <p class="card-message">You're sweeter than the sweetest chocolate! Life with you is like a box of chocolates - full of delightful surprises! 🍫🤎</p>
+                    <div class="card-decoration">🍫🍬🍫</div>
+                </div>
+
+                <!-- Teddy Day - Feb 10 -->
+                <div class="greeting-card" data-day="teddy">
+                    <div class="card-date">February 10th</div>
+                    <div class="card-emoji">🧸</div>
+                    <h2 class="card-day-title">Teddy Day</h2>
+                    <p class="card-message">Just like a teddy bear, I want to be the one you hug when you're happy, sad, or just need some comfort! 🧸💝</p>
+                    <div class="card-decoration">🧸🤗🧸</div>
+                </div>
+
+                <!-- Promise Day - Feb 11 -->
+                <div class="greeting-card" data-day="promise">
+                    <div class="card-date">February 11th</div>
+                    <div class="card-emoji">🤙</div>
+                    <h2 class="card-day-title">Promise Day</h2>
+                    <p class="card-message">I promise to always be there for you, to make you smile, to hold your hand through every storm. Forever and always! 🤞💫</p>
+                    <div class="card-decoration">✨🤝✨</div>
+                </div>
+
+                <!-- Hug Day - Feb 12 -->
+                <div class="greeting-card" data-day="hug">
+                    <div class="card-date">February 12th</div>
+                    <div class="card-emoji">🤗</div>
+                    <h2 class="card-day-title">Hug Day</h2>
+                    <p class="card-message">A hug from you is my favorite place to be. In your arms, I've found my home, my peace, my everything! 🤗💖</p>
+                    <div class="card-decoration">🫂💕🫂</div>
+                </div>
+
+                <!-- Kiss Day - Feb 13 -->
+                <div class="greeting-card" data-day="kiss">
+                    <div class="card-date">February 13th</div>
+                    <div class="card-emoji">💋</div>
+                    <h2 class="card-day-title">Kiss Day</h2>
+                    <p class="card-message">Your smile is my sunshine, and a kiss from you lights up my whole world. You're absolutely magical! 💋✨</p>
+                    <div class="card-decoration">💋💕💋</div>
+                </div>
+
+                <!-- Valentine's Day - Feb 14 -->
+                <div class="greeting-card" data-day="valentine">
+                    <div class="card-date">February 14th</div>
+                    <div class="card-emoji">❤️</div>
+                    <h2 class="card-day-title">Valentine's Day</h2>
+                    <p class="card-message">You are my today and all of my tomorrows. Happy Valentine's Day to the one who owns my heart! I love you! ❤️🥰</p>
+                    <div class="card-decoration">💝❤️💝</div>
+                </div>
+            </div>
+            
+            <button class="carousel-btn next-btn" onclick="nextCard()">❯</button>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" onclick="goToCard(0)"></span>
+            <span class="dot" onclick="goToCard(1)"></span>
+            <span class="dot" onclick="goToCard(2)"></span>
+            <span class="dot" onclick="goToCard(3)"></span>
+            <span class="dot" onclick="goToCard(4)"></span>
+            <span class="dot" onclick="goToCard(5)"></span>
+            <span class="dot" onclick="goToCard(6)"></span>
+            <span class="dot" onclick="goToCard(7)"></span>
+        </div>
+
+        <button class="btn btn-continue" onclick="window.location.href='page2.html'">
+            Continue to Plan Our Date 💖
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
