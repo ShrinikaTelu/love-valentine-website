@@ -132,7 +132,6 @@ body {
 .btn-no {
     background: linear-gradient(135deg, #a8a8a8 0%, #888888 100%);
     color: white;
-    position: absolute;
     transition: all 0.2s ease-out;
 }
 
