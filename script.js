@@ -297,45 +297,6 @@ window.addEventListener('keydown', function(e) {
     }
 });
 
-// Add floating hearts animation
-function createFloatingHeart() {
-    const heart = document.createElement('div');
-    heart.innerHTML = ['💕', '💗', '💖', '💝', '❤️', '💘'][Math.floor(Math.random() * 6)];
-    heart.style.position = 'fixed';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.top = '100vh';
-    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-    heart.style.opacity = '0.7';
-    heart.style.pointerEvents = 'none';
-    heart.style.zIndex = '0';
-    heart.style.animation = 'floatUp 4s ease-out forwards';
-    
-    document.body.appendChild(heart);
-    
-    setTimeout(() => {
-        heart.remove();
-    }, 4000);
-}
-
-// Add the floating animation style dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes floatUp {
-        0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 0.7;
-        }
-        100% {
-            transform: translateY(-100vh) rotate(360deg);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Create floating hearts periodically
-setInterval(createFloatingHeart, 800);
-
 // ========== GREETING CARDS CAROUSEL ==========
 let currentCardIndex = 0;
 const greetingCards = document.querySelectorAll('.greeting-card');
